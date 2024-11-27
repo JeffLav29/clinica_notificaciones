@@ -1,9 +1,9 @@
 <?php
 
 require_once("../config/conexion.php");
-require_once("../models/Usuario.php");
+require_once("../models/Notificacion.php");
 
-$usuario = new Usuario();
+$notificacion = new Notificacion();
 
 switch($_GET["op"]){
     case 'login':

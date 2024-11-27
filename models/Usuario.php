@@ -1,14 +1,14 @@
 <?php
 
 class Usuario extends Conectar{
-    public function login_usuario($usuario,$contraseña){
+    public function login_usuario($usuario,$contra){
         $conectar = parent::Conexion();
         parent::set_names();
 
-        $sql = "SELECT * FROM usuario WHERE idusuario = ? AND contra = ? AND estado = 1";
+        $sql = "SELECT * FROM usuario WHERE nom_user = ? AND contra = ? AND estado = 1";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1,$usuario);
-        $sql->bindValue(2,$contraseña);
+        $sql->bindValue(2,$contra);
         $sql->execute();
 
         return $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
