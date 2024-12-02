@@ -70,7 +70,7 @@
                 <div class="row">
                     <!-- Botón 1 -->
                     <div class="col-6 col-sm-6 mb-3">
-                        <a href="/view/notificaciones/notificacion.php" class="btn btn-outline-primary w-100 py-4">
+                        <a href="../notificaciones/index.php" class="btn btn-outline-primary w-100 py-4">
                             <i class="fa fa-calendar fa-2x"></i><br>
                             Consultar Notificaciones
                         </a>

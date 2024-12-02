@@ -53,7 +53,7 @@
             </div><!-- menu-item -->
         </a><!-- br-menu-link -->
         <ul class="br-menu-sub nav flex-column">
-            <li class="nav-item"><a href="../../view/Usuarios/" class="nav-link">Usuarios</a></li>
+            <li class="nav-item"><a href="../../view/notificaciones/index.php" class="nav-link">Notificaciones</a></li>
             <li class="nav-item"><a href="../../view/Categorias/" class="nav-link">Categorias</a></li>
         </ul>
         <br>
