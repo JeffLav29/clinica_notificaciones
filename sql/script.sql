@@ -16,12 +16,13 @@ CREATE TABLE medicamento (
 -- Crear la tabla usuario
 CREATE TABLE usuario (
     idusuario int NOT NULL AUTO_INCREMENT,
-    nom_user varchar(45) NOT NULL,
+    dni varchar(45) NOT NULL,
     contra varchar(45) NOT NULL,
     correo varchar(45) NOT NULL,
     rol varchar(45) NOT NULL,
+    estado TINYINT NOT NULL DEFAULT 1, 
     PRIMARY KEY (idusuario),
-    UNIQUE KEY uq_usuario_nombre (nom_user),
+    UNIQUE KEY uq_usuario_nombre (dni),
     UNIQUE KEY uq_usuario_correo (correo)
 );
 
@@ -46,12 +47,13 @@ CREATE TABLE paciente (
     idpaciente int NOT NULL AUTO_INCREMENT,
     nombre varchar(45) NOT NULL,
     apellido varchar(45) NOT NULL,
-    dni varchar(45) NOT NULL,
     fecha_nacimiento date NOT NULL,
     genero varchar(45) DEFAULT NULL,
     telefono varchar(45) DEFAULT NULL,
     direccion varchar(45) DEFAULT NULL,
-    PRIMARY KEY (idpaciente)
+    usuario_id int DEFAULT NULL,
+    PRIMARY KEY (idpaciente),
+    CONSTRAINT fk_paciente_usuario FOREIGN KEY (usuario_id) REFERENCES usuario (idusuario)
 );
 
 -- Crear la tabla medicamento_paciente
@@ -72,7 +74,6 @@ CREATE TABLE medicamento_paciente (
     CONSTRAINT fk_pacienteid FOREIGN KEY (paciente_id) REFERENCES paciente (idpaciente)
 );
 
-
 -- Crear la tabla notificacion
 CREATE TABLE notificacion (
     idnotificacion int NOT NULL AUTO_INCREMENT,
@@ -89,5 +90,3 @@ CREATE TABLE notificacion (
     CONSTRAINT fk_medico_idi FOREIGN KEY (medico_id) REFERENCES medico (idmedico),
     CONSTRAINT fk_pacientedi FOREIGN KEY (paciente_id) REFERENCES paciente (idpaciente)
 );
-
-

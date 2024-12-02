@@ -5,7 +5,7 @@ class Usuario extends Conectar{
         $conectar = parent::Conexion();
         parent::set_names();
 
-        $sql = "SELECT * FROM usuario WHERE nom_user = ? AND contra = ? AND estado = 1";
+        $sql = "SELECT * FROM usuario WHERE dni = ? AND contra = ? AND estado = 1";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1,$usuario);
         $sql->bindValue(2,$contra);

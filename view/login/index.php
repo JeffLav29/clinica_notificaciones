@@ -13,8 +13,8 @@
             <div class="tx-center mg-b-20">Proyecto MVC</div>
 
             <div class="form-group">
-                <label for="">Usuario:</label>
-                <input type="text" class="form-control" placeholder="Ingrese su Usuario" id="user_usu" autocomplete="off">
+                <label for="">Dni:</label>
+                <input type="text" class="form-control" placeholder="Ingrese su Dni" id="user_usu" autocomplete="off">
             </div>
 
             <div class="form-group">
