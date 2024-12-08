@@ -7,7 +7,7 @@ class Notificacion extends Conectar {
         $conectar = parent::Conexion();
         parent::set_names();
 
-        $sql = "SELECT motivo, mensaje, creado_en, programado_para FROM notificacion";
+        $sql = "SELECT * FROM notificacion";
         $sql = $conectar->prepare($sql);
         $sql->execute();
 
@@ -31,11 +31,12 @@ class Notificacion extends Conectar {
 
     // Crear una nueva notificación
     public function insert_notificacion($medico_id, $paciente_id, $motivo, $mensaje, $creado_en, $programado_para) {
+        var_dump($medico_id, $paciente_id, $motivo, $mensaje, $creado_en, $programado_para); // <-- Aquí
         $conectar = parent::Conexion();
         parent::set_names();
     
         $sql = "INSERT INTO notificacion (medico_id, paciente_id, motivo, mensaje, creado_en, programado_para) 
-                VALUES (?, ?, ?, ?, ?, ?)";
+                VALUES (?,?,?,?,?,?)";
         
         $sql = $conectar->prepare($sql);
         
